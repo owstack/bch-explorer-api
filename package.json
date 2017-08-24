@@ -1,5 +1,5 @@
 {
-  "name": "explorer-api",
+  "name": "bcccore-explorer-api",
   "description": "A Bitcoin blockchain REST and web socket API service for Bcccore Node.",
   "version": "0.4.3",
   "repository": "git://github.com/owstack/explorer-api.git",
@@ -38,9 +38,9 @@
     }
   ],
   "bugs": {
-    "url": "https://github.com/owstack/explorer-api/issues"
+    "url": "https://github.com/owstack/bcccore-explorer-api/issues"
   },
-  "homepage": "https://github.com/owstack/explorer-api",
+  "homepage": "https://github.com/owstack/bcccore-explorer-api",
   "license": "MIT",
   "keywords": [
     "explorer",
