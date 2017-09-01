@@ -1,7 +1,7 @@
 {
   "name": "bcccore-explorer-api",
   "description": "A Bitcoin blockchain REST and web socket API service for Bcccore Node.",
-  "version": "0.4.3",
+  "version": "0.0.1",
   "repository": "git://github.com/owstack/explorer-api.git",
   "contributors": [
     {
