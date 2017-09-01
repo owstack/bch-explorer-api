@@ -1,42 +1,8 @@
 {
   "name": "bcccore-explorer-api",
-  "description": "A Bitcoin blockchain REST and web socket API service for Bcccore Node.",
+  "description": "A Bitcoin Cash blockchain REST and web socket API service for Bcccore Node.",
   "version": "0.0.1",
   "repository": "git://github.com/owstack/explorer-api.git",
-  "contributors": [
-    {
-      "name": "Gustavo Cortez",
-      "email": "cmgustavo83@gmail.com"
-    },
-    {
-      "name": "Ivan Socolsky",
-      "email": "jungans@gmail.com"
-    },
-    {
-      "name": "Juan Ignacio Sosa Lopez",
-      "email": "bechilandia@gmail.com"
-    },
-    {
-      "name": "Manuel Araoz",
-      "email": "manuelaraoz@gmail.com"
-    },
-    {
-      "name": "Matias Alejo Garcia",
-      "email": "ematiu@gmail.com"
-    },
-    {
-      "name": "Mario Colque",
-      "email": "colquemario@gmail.com"
-    },
-    {
-      "name": "Patrick Nagurny",
-      "email": "patrick@bitpay.com"
-    },
-    {
-      "name": "Braydon Fuller",
-      "email": "braydon@bitpay.com"
-    }
-  ],
   "bugs": {
     "url": "https://github.com/owstack/bcccore-explorer-api/issues"
   },
