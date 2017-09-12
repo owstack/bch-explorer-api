@@ -2,7 +2,7 @@
 
 var should = require('should');
 var sinon = require('sinon');
-var ExplorerAPI = require('../lib/index');
+var ExplorerAPI = require('../ows-node/index');
 
 describe('Index', function() {
   describe('@constructor', function() {
