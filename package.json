@@ -23,8 +23,7 @@
   "scripts": {
     "test": "NODE_ENV=test mocha -R spec --recursive"
   },
-  "main": "lib",
-  "bcccoreNode": "lib",
+  "owsNode": "ows-node",
   "dependencies": {
     "async": "*",
     "bcccore-lib": "https://github.com/owstack/bcccore-lib.git",
