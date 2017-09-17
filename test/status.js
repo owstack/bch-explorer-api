@@ -153,7 +153,7 @@ describe('Status', function() {
         jsonp: function(data) {
           should(data.connected).equal(true);
           should(data.host).match(/^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$/);
-          should.not.exist(data.port);
+          should(data.port).match(/^[0-9]{4}$/);
           done();
         }
       };
