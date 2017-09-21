@@ -1,9 +1,13 @@
 Bcccore Explorer API
 ======
 
-A Bitcoin blockchain REST and web socket API service for [Bcccore Node](https://github.com/owstack/bcccore-node).
+A Bitcoin Cash blockchain REST and web socket API service for [OWS Node](https://github.com/owstack/ows-node).
 
-This is a backend-only service. If you're looking for the web frontend application, take a look at https://github.com/owstack/explorer-ui.
+This is a backend-only service. If you're looking for the web frontend application, take a look at https://github.com/owstack/ows-explorer.
+
+## Attribution
+
+This repository was created by copy forking [insight-api commit 8f4029b](https://github.com/bitpay/insight-api/commit/8f4029b3e5e3b490dc9283febafa9a9ff084dbef).
 
 ## Getting Started
 
@@ -19,9 +23,9 @@ The API endpoints will be available by default at: `http://localhost:3001/bcccor
 
 ## Prerequisites
 
-- [Bcccore Node](https://github.com/owstack/bcccore-node)
+- [OWS Node](https://github.com/owstack/ows-node)
 
-**Note:** You can use an existing Bitcoin data directory, however `txindex`, `addressindex`, `timestampindex` and `spentindex` needs to be set to true in `bitcoin.conf`, as well as a few other additional fields.
+**Note:** You can use an existing Bitcoin Cash data directory, however `txindex`, `addressindex`, `timestampindex` and `spentindex` needs to be set to true in `bitcoin.conf`, as well as a few other additional fields.
 
 ## Query Rate Limit
 
@@ -290,7 +294,7 @@ POST response:
   /explorer-api/peer
 ```
 
-### Status of the Bitcoin Network
+### Status of the Bitcoin Cash Network
 ```
   /explorer-api/status?q=xxx
 ```
@@ -335,7 +339,7 @@ Sample output:
 }
 ```
 
-`<bitcoinAddress>`: new transaction concerning <bitcoinAddress> received from network. This event is published in the `<bitcoinAddress>` room.
+`<address>`: new transaction concerning <address> received from network. This event is published in the `<address>` room.
 
 `status`: every 1% increment on the sync task, this event will be triggered. This event is published in the `sync` room.
 

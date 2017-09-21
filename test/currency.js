@@ -7,24 +7,18 @@ var CurrencyController = require('../lib/currency');
 
 describe('Currency', function() {
 
-  var krakenData = {
-    "error":[],
-    "result": {
-      "BCHUSD": {
-        "a":["448.800000","2","2.000"],
-        "b":["448.500000","1","1.000"],
-        "c":["448.600000","0.57800000"],
-        "v":["2244.24941029","2889.88796717"],
-        "p":["436.475903","438.858681"],
-        "t":[2162,2725],
-        "l":["411.900000","411.900000"],
-        "h":["456.800000","460.300000"],
-        "o":"449.000000"
-      }
-    }
+  var bitstampData = {
+    high: 239.44,
+    last: 237.90,
+    timestamp: 1443798711,
+    bid: 237.61,
+    vwap: 237.88,
+    volume: 21463.27736401,
+    low: 235.00,
+    ask: 237.90
   };
 
-  it.skip('will make live request to kraken', function(done) {
+  it.skip('will make live request to bitstamp', function(done) {
     var currency = new CurrencyController({});
     var req = {};
     var res = {
@@ -40,7 +34,7 @@ describe('Currency', function() {
 
   it('will retrieve a fresh value', function(done) {
     var TestCurrencyController = proxyquire('../lib/currency', {
-      request: sinon.stub().callsArgWith(1, null, {statusCode: 200}, JSON.stringify(krakenData))
+      request: sinon.stub().callsArgWith(1, null, {statusCode: 200}, JSON.stringify(bitstampData))
     });
     var node = {
       log: {
@@ -59,7 +53,7 @@ describe('Currency', function() {
       jsonp: function(response) {
         response.status.should.equal(200);
         should.exist(response.data.rates.USD.rate);
-        response.data.rates.USD.rate.should.equal(448.60);
+        response.data.rates.USD.rate.should.equal(237.90);
         done();
       }
     };
@@ -78,7 +72,7 @@ describe('Currency', function() {
     var currency = new TestCurrencyController({node: node});
     currency.rates = {
       USD: {
-        rate: 448.60
+        rate: 237.90
       }
     };
     currency.timestamp = Date.now() - 65000 * CurrencyController.DEFAULT_CURRENCY_DELAY;
@@ -87,7 +81,7 @@ describe('Currency', function() {
       jsonp: function(response) {
         response.status.should.equal(200);
         should.exist(response.data.rates.USD.rate);
-        response.data.rates.USD.rate.should.equal(448.60);
+        response.data.rates.USD.rate.should.equal(237.90);
         node.log.error.called;
         done();
       }
@@ -108,7 +102,7 @@ describe('Currency', function() {
     var currency = new TestCurrencyController({node: node});
     currency.rates = {
       USD: {
-        rate: 448.60
+        rate: 237.90
       }
     };
     currency.timestamp = Date.now();
@@ -117,7 +111,7 @@ describe('Currency', function() {
       jsonp: function(response) {
         response.status.should.equal(200);
         should.exist(response.data.rates.USD.rate);
-        response.data.rates.USD.rate.should.equal(448.60);
+        response.data.rates.USD.rate.should.equal(237.90);
         request.callCount.should.equal(0);
         done();
       }
