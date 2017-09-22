@@ -1,6 +1,10 @@
 Bcccore Explorer API
 ======
 
+[![NPM Package](https://img.shields.io/npm/v/bcccore-explorer-api.svg?style=flat-square)](https://www.npmjs.org/package/bcccore-explorer-api)
+[![Build Status](https://img.shields.io/travis/owstack/bcccore-explorer-api.svg?branch=master&style=flat-square)](https://travis-ci.org/owstack/bcccore-explorer-api)
+[![Coverage Status](https://img.shields.io/coveralls/owstack/bcccore-explorer-api.svg?style=flat-square)](https://coveralls.io/r/owstack/bcccore-explorer-api)
+
 A Bitcoin Cash blockchain REST and web socket API service for [OWS Node](https://github.com/owstack/ows-node).
 
 This is a backend-only service. If you're looking for the web frontend application, take a look at https://github.com/owstack/ows-explorer.
