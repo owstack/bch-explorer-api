@@ -61,7 +61,7 @@ var ExplorerAPI = function(options) {
   this.txController = new TxController(this.node);
 };
 
-ExplorerAPI.dependencies = ['header', 'block', 'transaction', 'address', 'web', 'mempool', 'timestamp', 'fee'];
+ExplorerAPI.dependencies = ['bitcoind', 'web'];
 
 inherits(ExplorerAPI, BaseService);
 

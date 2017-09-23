@@ -5,7 +5,7 @@ Bcccore Explorer API
 [![Build Status](https://img.shields.io/travis/owstack/bcccore-explorer-api.svg?branch=master&style=flat-square)](https://travis-ci.org/owstack/bcccore-explorer-api)
 [![Coverage Status](https://img.shields.io/coveralls/owstack/bcccore-explorer-api.svg?style=flat-square)](https://coveralls.io/r/owstack/bcccore-explorer-api)
 
-A Bitcoin Cash blockchain REST and web socket API service for [OWS Node](https://github.com/owstack/ows-node).
+A Bitcoin Cash blockchain REST and web socket API service for [Bcccore Node](https://github.com/owstack/bcccore-node).
 
 This is a backend-only service. If you're looking for the web frontend application, take a look at https://github.com/owstack/ows-explorer.
 
@@ -27,7 +27,7 @@ The API endpoints will be available by default at: `http://localhost:3001/bcccor
 
 ## Prerequisites
 
-- [OWS Node](https://github.com/owstack/ows-node)
+- [Bcccore Node](https://github.com/owstack/bcccore-node)
 
 **Note:** You can use an existing Bitcoin Cash data directory, however `txindex`, `addressindex`, `timestampindex` and `spentindex` needs to be set to true in `bitcoin.conf`, as well as a few other additional fields.
 
