@@ -25,6 +25,7 @@
     "regtest": "mocha -R spec regtest",
     "perf": "mocha -R spec perf"
   },
+  "main": "lib",
   "bcccoreNode": "bcccore-node",
   "dependencies": {
     "JSONStream": "^1.3.1",
