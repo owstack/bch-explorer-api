@@ -11,7 +11,7 @@ This is a backend-only service. If you're looking for the web frontend applicati
 
 ## Attribution
 
-This repository was created by copy forking [insight-api commit 8f4029b](https://github.com/bitpay/insight-api/commit/8f4029b3e5e3b490dc9283febafa9a9ff084dbef).
+This repository was created by copy forking [explorer-api commit 8f4029b](https://github.com/bitpay/explorer-api/commit/8f4029b3e5e3b490dc9283febafa9a9ff084dbef).
 
 ## Getting Started
 
@@ -53,7 +53,6 @@ Or disabled entirely with:
     }
   }
   ```
-  
 
 ## API HTTP Endpoints
 
@@ -298,7 +297,7 @@ POST response:
   /explorer-api/peer
 ```
 
-### Status of the Bitcoin Cash Network
+### Status of the Bitcoin Network
 ```
   /explorer-api/status?q=xxx
 ```
@@ -343,7 +342,7 @@ Sample output:
 }
 ```
 
-`<address>`: new transaction concerning <address> received from network. This event is published in the `<address>` room.
+`<bitcoinAddress>`: new transaction concerning <bitcoinAddress> received from network. This event is published in the `<bitcoinAddress>` room.
 
 `status`: every 1% increment on the sync task, this event will be triggered. This event is published in the `sync` room.
 

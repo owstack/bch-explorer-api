@@ -90,25 +90,9 @@ ExplorerAPI.prototype.getRoutePrefix = function() {
 };
 
 ExplorerAPI.prototype.start = function(callback) {
-
-  if (this._subscribed) {
-    return;
-  }
-
-  this._subscribed = true;
-
-  if (!this._bus) {
-    this._bus = this.node.openBus({remoteAddress: 'localhost-explorer-api'});
-  }
-
-  this._bus.on('block/block', this.transactionEventHandler.bind(this));
-  this._bus.subscribe('block/block');
-
-  this._bus.on('mempool/transaction', this.blockEventHandler.bind(this));
-  this._bus.subscribe('mempool/transaction');
-
-  callback();
-
+  this.node.services.bitcoind.on('tx', this.transactionEventHandler.bind(this));
+  this.node.services.bitcoind.on('block', this.blockEventHandler.bind(this));
+  setImmediate(callback);
 };
 
 ExplorerAPI.prototype.createLogInfoStream = function() {
