@@ -54,7 +54,8 @@ describe('Status', function() {
           should.exist(data.info.difficulty);
           should.exist(data.info.testnet);
           should.exist(data.info.relayfee);
-
+          should.exist(data.info.description);
+          should.exist(data.info.units);
           done();
         }
       };
