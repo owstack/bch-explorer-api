@@ -23,6 +23,7 @@
   "scripts": {
     "test": "NODE_ENV=test mocha -R spec --recursive"
   },
+  "main": "bcccore-node",
   "bcccoreNode": "bcccore-node",
   "dependencies": {
     "async": "*",
