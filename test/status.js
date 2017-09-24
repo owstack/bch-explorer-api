@@ -8,9 +8,9 @@ describe('Status', function() {
   describe('/status', function() {
     var info = {
       version: 110000,
-      protocolversion: 70002,
+      protocolVersion: 70002,
       blocks: 548645,
-      timeoffset: 0,
+      timeOffset: 0,
       connections: 8,
       difficulty: 21546.906405522557,
       testnet: true,
@@ -30,10 +30,10 @@ describe('Status', function() {
 
     var node = {
       services: {
-        block: {
+        bitcoind: {
           getInfo: sinon.stub().callsArgWith(0, null, info),
-          getTip: sinon.stub().returns({ hash: outSetInfo.bestblock }),
-          getBestBlockHash: sinon.stub().callsArgWith(0, null, outSetInfo.bestblock)
+          getBestBlockHash: sinon.stub().callsArgWith(0, null, outSetInfo.bestblock),
+          tiphash: outSetInfo.bestblock
         }
       }
     };
@@ -116,11 +116,10 @@ describe('Status', function() {
     it('should have correct data', function(done) {
       var node = {
         services: {
-          block: {
-            getInfo: sinon.stub(),
+          bitcoind: {
+            height: 500000,
             isSynced: sinon.stub().callsArgWith(0, null, true),
-            syncPercentage: sinon.stub().callsArgWith(0, null, 100),
-            getTip: sinon.stub().returns({ height: 500000, hash: 'aa' })
+            syncPercentage: sinon.stub().callsArgWith(0, null, 99.99)
           }
         }
       };
@@ -149,11 +148,7 @@ describe('Status', function() {
 
   describe('/peer', function() {
     it('should have correct data', function(done) {
-      var node = {
-        services: {
-          block: { getTip: sinon.stub().returns({ height: 123 }) }
-        }
-      };
+      var node = {};
 
       var req = {};
       var res = {
@@ -173,13 +168,7 @@ describe('Status', function() {
 
   describe('/version', function() {
     it('should have correct data', function(done) {
-      var node = {
-        services: {
-          block: {
-            getTip: sinon.stub().returns({ height: 123 })
-          }
-        }
-      };
+      var node = {};
       var expected = {
         version: require('../package.json').version
       };

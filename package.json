@@ -21,16 +21,11 @@
     "node": ">=8.2.0"
   },
   "scripts": {
-    "test": "NODE_ENV=test mocha -R spec --recursive",
-    "regtest": "mocha -R spec regtest",
-    "perf": "mocha -R spec perf"
+    "test": "NODE_ENV=test mocha -R spec --recursive"
   },
-  "main": "lib",
-  "owsNode": "lib",
+  "bcccoreNode": "lib",
   "dependencies": {
-    "JSONStream": "^1.3.1",
     "async": "*",
-    "bcoin": "1.0.0-beta.12",
     "bcccore-lib": "git://github.com/owstack/bcccore-lib",
     "bcccore-message": "git://github.com/owstack/bcccore-message",
     "body-parser": "^1.13.3",
@@ -41,13 +36,9 @@
     "request": "^2.64.0"
   },
   "devDependencies": {
-    "bitcoind-rpc": "git://github.com/owstack/bitcoind-rpc",
-    "bcccore-p2p": "git://github.com/owstack/bcccore-p2p",
     "chai": "^3.5.0",
-    "mkdirp": "^0.5.1",
     "mocha": "^2.4.5",
     "proxyquire": "^1.7.2",
-    "rimraf": "^2.6.1",
     "should": "^8.3.1",
     "sinon": "^1.10.3"
   }
