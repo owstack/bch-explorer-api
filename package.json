@@ -27,8 +27,8 @@
   "bcccoreNode": "bcccore-node",
   "dependencies": {
     "async": "^2.5.0",
-    "bcccore-lib": "git://github.com/owstack/bcccore-lib",
-    "bcccore-message": "git://github.com/owstack/bcccore-message",
+    "bcccore-lib": "https://github.com/owstack/bcccore-lib",
+    "bcccore-message": "https://github.com/owstack/bcccore-message",
     "body-parser": "^1.13.3",
     "compression": "^1.6.1",
     "lru-cache": "^4.0.1",
