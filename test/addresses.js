@@ -1,9 +1,11 @@
 'use strict';
+
 var sinon = require('sinon');
 var should = require('should');
-var AddressController = require('../lib/addresses');
-var _ = require('lodash');
+
 var bcccore = require('bcccore-lib');
+var AddressController = require('../lib/addresses');
+var _ = bcccore.deps._;
 
 var txinfos = {
   totalCount: 2,

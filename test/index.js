@@ -2,6 +2,7 @@
 
 var should = require('should');
 var sinon = require('sinon');
+
 var ExplorerAPI = require('../bcccore-node/index');
 
 describe('Index', function() {

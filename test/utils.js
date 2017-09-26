@@ -2,6 +2,7 @@
 
 var sinon = require('sinon');
 var should = require('should');
+
 var UtilsController = require('../lib/utils');
 
 describe('Utils', function() {

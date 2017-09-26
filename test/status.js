@@ -2,6 +2,7 @@
 
 var sinon = require('sinon');
 var should = require('should');
+
 var StatusController = require('../lib/status');
 
 describe('Status', function() {
