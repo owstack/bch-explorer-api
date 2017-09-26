@@ -2,9 +2,10 @@
 
 var should = require('should');
 var sinon = require('sinon');
-var MessagesController = require('../lib/messages');
+
 var bcccore = require('bcccore-lib');
-var _ = require('lodash');
+var MessagesController = require('../lib/messages');
+var _ = bcccore.deps._;
 
 describe('Messages', function() {
 

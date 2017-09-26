@@ -1,24 +1,24 @@
 'use strict';
 
-var Writable = require('stream').Writable;
-var bodyParser = require('body-parser');
-var compression = require('compression');
-var BaseService = require('./service');
-var inherits = require('util').inherits;
-var BlockController = require('../lib/blocks');
-var TxController = require('../lib/transactions');
-var AddressController = require('../lib/addresses');
-var StatusController = require('../lib/status');
-var MessagesController = require('../lib/messages');
-var UtilsController = require('../lib/utils');
-var CurrencyController = require('../lib/currency');
-var RateLimiter = require('../lib/ratelimiter');
-var morgan = require('morgan');
 var bcccore = require('bcccore-lib');
+var AddressController = require('../lib/addresses');
+var bodyParser = require('body-parser');
+var BaseService = require('./service');
+var BlockController = require('../lib/blocks');
+var compression = require('compression');
+var CurrencyController = require('../lib/currency');
+var EventEmitter = require('events').EventEmitter;
+var inherits = require('util').inherits;
+var MessagesController = require('../lib/messages');
+var morgan = require('morgan');
+var RateLimiter = require('../lib/ratelimiter');
+var StatusController = require('../lib/status');
+var Transaction = bcccore.Transaction;
+var TxController = require('../lib/transactions');
+var UtilsController = require('../lib/utils');
+var Writable = require('stream').Writable;
 var _ = bcccore.deps._;
 var $ = bcccore.util.preconditions;
-var Transaction = bcccore.Transaction;
-var EventEmitter = require('events').EventEmitter;
 
 /**
  * A service to enable HTTP routes to query information about the blockchain.

@@ -2,11 +2,11 @@
 
 var should = require('should');
 var sinon = require('sinon');
-var BlockController = require('../lib/blocks');
-var bcccore = require('bcccore-lib');
-var _ = require('lodash');
 
+var bcccore = require('bcccore-lib');
 var blocks = require('./data/blocks.json');
+var BlockController = require('../lib/blocks');
+var _ = bcccore.deps._;
 
 var blockIndexes = {
   '0000000000000afa0c3c0afd450c793a1e300ec84cbe9555166e06132f19a8f7': {

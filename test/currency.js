@@ -2,8 +2,9 @@
 
 var should = require('should');
 var sinon = require('sinon');
-var proxyquire = require('proxyquire');
+
 var CurrencyController = require('../lib/currency');
+var proxyquire = require('proxyquire');
 
 describe('Currency', function() {
 

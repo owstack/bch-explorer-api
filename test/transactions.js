@@ -1,9 +1,11 @@
 'use strict';
+
 var should = require('should');
 var sinon = require('sinon');
+
 var bcccore = require('bcccore-lib');
 var TxController = require('../lib/transactions');
-var _ = require('lodash');
+var _ = bcccore.deps._;
 
 describe('Transactions', function() {
   describe('/tx/:txid', function() {
