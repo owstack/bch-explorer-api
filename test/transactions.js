@@ -3,9 +3,9 @@
 var should = require('should');
 var sinon = require('sinon');
 
-var bcccore = require('bcccore-lib');
+var bchLib = require('bch-lib');
 var TxController = require('../lib/transactions');
-var _ = bcccore.deps._;
+var _ = bchLib.deps._;
 
 describe('Transactions', function() {
   describe('/tx/:txid', function() {
@@ -950,7 +950,7 @@ describe('Transactions', function() {
       var hex = '01000000010000000000000000000000000000000000000000000000000000000000000000ffffffff2303d6250800feb0aae355fe263600000963676d696e6572343208ae5800000000000000ffffffff01c018824a000000001976a91468bedce8982d25c3b6b03f6238cbad00378b8ead88ac00000000';
 
       var node = {
-        getTransaction: sinon.stub().callsArgWith(1, null, bcccore.Transaction().fromBuffer(new Buffer(hex, 'hex')))
+        getTransaction: sinon.stub().callsArgWith(1, null, bchLib.Transaction().fromBuffer(new Buffer(hex, 'hex')))
       };
 
       var transactions = new TxController(node);
@@ -987,10 +987,10 @@ describe('Transactions', function() {
       };
 
       var rawTx = '01000000011760bc271a397bfb65b7506d430d96ebb1faff467ed957516238a9670e806a86010000006b483045022100f0056ae68a34cdb4194d424bd727c18f82653bca2a198e0d55ab6b4ee88bbdb902202a5745af4f72a5dbdca1e3d683af4667728a8b20e8001e0f8308a4d329ce3f96012102f3af6e66b61c9d99c74d9a9c3c1bec014a8c05d28bf339c8f5f395b5ce319e7dffffffff02c8af00000000000017a9148083b541ea15f1d18c5ca5e1fd47f9035cce24ed87206b1e00000000001976a91410a0e70cd91a45e0e6e409e227ab285bd61592b188ac00000000';
-      var tx = bcccore.Transaction().fromBuffer(new Buffer(rawTx, 'hex'));
+      var tx = bchLib.Transaction().fromBuffer(new Buffer(rawTx, 'hex'));
 
       var node = {
-        network: bcccore.Networks.livenet
+        network: bchLib.Networks.livenet
       };
 
       var transactions = new TxController(node);
@@ -1011,10 +1011,10 @@ describe('Transactions', function() {
       };
 
       var rawTx = '01000000010000000000000000000000000000000000000000000000000000000000000000ffffffff0403ebc108ffffffff04a0ca814a000000001976a914fdb9fb622b0db8d9121475a983288a0876f4de4888ac0000000000000000226a200000000000000000000000000000000000000000000000000000ffff0000000000000000000000001b6a1976a914fdb9fb622b0db8d9121475a983288a0876f4de4888ac0000000000000000326a303a791c8e85200500d89769b4f958e4db6b3ec388ddaa30233c4517d942d440c24ae903bff40d97ca06465fcf2714000000000000';
-      var tx = bcccore.Transaction().fromBuffer(new Buffer(rawTx, 'hex'));
+      var tx = bchLib.Transaction().fromBuffer(new Buffer(rawTx, 'hex'));
 
       var node = {
-        network: bcccore.Networks.testnet
+        network: bchLib.Networks.testnet
       };
 
       var transactions = new TxController(node);
@@ -1034,13 +1034,13 @@ describe('Transactions', function() {
       ];
 
       var node = {
-        network: bcccore.Networks.livenet
+        network: bchLib.Networks.livenet
       };
 
       var transactions = new TxController(node);
 
       _.each(testCases, function(tc) {
-        var tx = bcccore.Transaction().fromBuffer(new Buffer(tc.rawTx, 'hex'));
+        var tx = bchLib.Transaction().fromBuffer(new Buffer(tc.rawTx, 'hex'));
         var result = transactions.transformInvTransaction(tx);
         should.exist(result.isRBF);
         result.isRBF.should.equal(tc.expected);

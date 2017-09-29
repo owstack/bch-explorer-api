@@ -3,9 +3,9 @@
 var sinon = require('sinon');
 var should = require('should');
 
-var bcccore = require('bcccore-lib');
+var bchLib = require('bch-lib');
 var AddressController = require('../lib/addresses');
-var _ = bcccore.deps._;
+var _ = bchLib.deps._;
 
 var txinfos = {
   totalCount: 2,
