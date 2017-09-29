@@ -3,13 +3,13 @@
 var should = require('should');
 var sinon = require('sinon');
 
-var bcccore = require('bcccore-lib');
+var bchLib = require('bch-lib');
 var MessagesController = require('../lib/messages');
-var _ = bcccore.deps._;
+var _ = bchLib.deps._;
 
 describe('Messages', function() {
 
-  var privateKey = bcccore.PrivateKey.fromWIF('cQwApHAg8hw9AZuxiU4a7g9kFWdaemhPxVZXWiAKgJTx6dPP32fN');
+  var privateKey = bchLib.PrivateKey.fromWIF('cQwApHAg8hw9AZuxiU4a7g9kFWdaemhPxVZXWiAKgJTx6dPP32fN');
   var address = 'mswTKCE2tYSFvUNnNPBKZfeNmugYL1rZMx';
   var badAddress = 'mswTKCE2tYSFvUNnNPBKZfeNmuhYL1rZMm';
   var signature = 'IA4sIwhcLMPPsYtB8tN0PI+aQuwDyl+/4Ksa89llNSAeVaRdMyyIxpo1H5N3GHbPl9LQqZ7CvaokeQgsOkK9fn4=';

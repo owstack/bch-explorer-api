@@ -1,11 +1,11 @@
-Bcccore Explorer API
+Bch Explorer API
 ======
 
-[![NPM Package](https://img.shields.io/npm/v/bcccore-explorer-api.svg?style=flat-square)](https://www.npmjs.org/package/bcccore-explorer-api)
-[![Build Status](https://img.shields.io/travis/owstack/bcccore-explorer-api.svg?branch=master&style=flat-square)](https://travis-ci.org/owstack/bcccore-explorer-api)
-[![Coverage Status](https://img.shields.io/coveralls/owstack/bcccore-explorer-api.svg?style=flat-square)](https://coveralls.io/r/owstack/bcccore-explorer-api)
+[![NPM Package](https://img.shields.io/npm/v/bch-explorer-api.svg?style=flat-square)](https://www.npmjs.org/package/bch-explorer-api)
+[![Build Status](https://img.shields.io/travis/owstack/bch-explorer-api.svg?branch=master&style=flat-square)](https://travis-ci.org/owstack/bch-explorer-api)
+[![Coverage Status](https://img.shields.io/coveralls/owstack/bch-explorer-api.svg?style=flat-square)](https://coveralls.io/r/owstack/bch-explorer-api)
 
-A Bitcoin Cash blockchain REST and web socket API service for [Bcccore Node](https://github.com/owstack/bcccore-node).
+A Bitcoin Cash blockchain REST and web socket API service for [Bch Node](https://github.com/owstack/bch-node).
 
 This is a backend-only service. If you're looking for the web frontend application, take a look at https://github.com/owstack/ows-explorer.
 
@@ -16,24 +16,24 @@ This repository was created by copy forking [explorer-api commit 8f4029b](https:
 ## Getting Started
 
 ```bashl
-npm install -g bcccore-node@latest
-bcccore-node create mynode
+npm install -g bch-node@latest
+bch-node create mynode
 cd mynode
-bcccore-node install bcccore-explorer-api
-bcccore-node start
+bch-node install bch-explorer-api
+bch-node start
 ```
 
-The API endpoints will be available by default at: `http://localhost:3001/bcccore-explorer-api/`
+The API endpoints will be available by default at: `http://localhost:3001/bch-explorer-api/`
 
 ## Prerequisites
 
-- [Bcccore Node](https://github.com/owstack/bcccore-node)
+- [Bch Node](https://github.com/owstack/bch-node)
 
 **Note:** You can use an existing Bitcoin Cash data directory, however `txindex`, `addressindex`, `timestampindex` and `spentindex` needs to be set to true in `bitcoin.conf`, as well as a few other additional fields.
 
 ## Query Rate Limit
 
-To protect the server, explorer-api has a built it query rate limiter. It can be configurable in `bcccore-node.json` with:
+To protect the server, explorer-api has a built it query rate limiter. It can be configurable in `bch-node.json` with:
 ``` json
   "servicesConfig": {
     "explorer-api": {
@@ -43,7 +43,7 @@ To protect the server, explorer-api has a built it query rate limiter. It can be
     }
   }
 ```
-With all the configuration options available: https://github.com/owstack/bcccore-explorer-api/blob/master/lib/ratelimiter.js#L10-17
+With all the configuration options available: https://github.com/owstack/bch-explorer-api/blob/master/lib/ratelimiter.js#L10-17
 
 Or disabled entirely with:
 ``` json

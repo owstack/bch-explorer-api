@@ -1,6 +1,6 @@
 'use strict';
 
-var bcccore = require('bcccore-lib');
+var bchLib = require('bch-lib');
 var AddressController = require('../lib/addresses');
 var bodyParser = require('body-parser');
 var BaseService = require('./service');
@@ -13,12 +13,12 @@ var MessagesController = require('../lib/messages');
 var morgan = require('morgan');
 var RateLimiter = require('../lib/ratelimiter');
 var StatusController = require('../lib/status');
-var Transaction = bcccore.Transaction;
+var Transaction = bchLib.Transaction;
 var TxController = require('../lib/transactions');
 var UtilsController = require('../lib/utils');
 var Writable = require('stream').Writable;
-var _ = bcccore.deps._;
-var $ = bcccore.util.preconditions;
+var _ = bchLib.deps._;
+var $ = bchLib.util.preconditions;
 
 /**
  * A service to enable HTTP routes to query information about the blockchain.

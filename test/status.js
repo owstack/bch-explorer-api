@@ -131,7 +131,7 @@ describe('Status', function() {
         syncPercentage: 100,
         height: 500000,
         error: null,
-        type: 'bcccore node'
+        type: 'bch node'
       };
 
       var status = new StatusController(node);

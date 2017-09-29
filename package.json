@@ -1,12 +1,12 @@
 {
-  "name": "bcccore-explorer-api",
-  "description": "A Bitcoin Cash blockchain REST and web socket API service for Bcccore.",
+  "name": "bch-explorer-api",
+  "description": "A Bitcoin Cash blockchain REST and web socket API service for Bch Node.",
   "version": "0.0.1",
-  "repository": "git://github.com/owstack/bcccore-explorer-api.git",
+  "repository": "git://github.com/owstack/bch-explorer-api.git",
   "bugs": {
-    "url": "https://github.com/owstack/bcccore-explorer-api/issues"
+    "url": "https://github.com/owstack/bch-explorer-api/issues"
   },
-  "homepage": "https://github.com/owstack/bcccore-explorer-api",
+  "homepage": "https://github.com/owstack/bch-explorer-api",
   "license": "MIT",
   "keywords": [
     "explorer",
@@ -15,7 +15,7 @@
     "bitcoin cash api",
     "blockchain api",
     "json",
-    "bcccore"
+    "bch"
   ],
   "engines": {
     "node": ">=8.2.0"
@@ -23,12 +23,12 @@
   "scripts": {
     "test": "NODE_ENV=test mocha -R spec --recursive"
   },
-  "main": "bcccore-node",
-  "bcccoreNode": "bcccore-node",
+  "main": "bch-node",
+  "bchNode": "bch-node",
   "dependencies": {
     "async": "^2.5.0",
-    "bcccore-lib": "https://github.com/owstack/bcccore-lib",
-    "bcccore-message": "https://github.com/owstack/bcccore-message",
+    "bch-lib": "https://github.com/owstack/bch-lib",
+    "bch-message": "https://github.com/owstack/bch-message",
     "body-parser": "^1.13.3",
     "compression": "^1.6.1",
     "lru-cache": "^4.0.1",

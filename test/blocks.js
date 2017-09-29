@@ -3,10 +3,10 @@
 var should = require('should');
 var sinon = require('sinon');
 
-var bcccore = require('bcccore-lib');
+var bchLib = require('bch-lib');
 var blocks = require('./data/blocks.json');
 var BlockController = require('../lib/blocks');
-var _ = bcccore.deps._;
+var _ = bchLib.deps._;
 
 var blockIndexes = {
   '0000000000000afa0c3c0afd450c793a1e300ec84cbe9555166e06132f19a8f7': {
@@ -69,11 +69,11 @@ describe('Blocks', function() {
       'poolInfo': {}
     };
 
-    var bcccoreBlock = bcccore.Block.fromBuffer(new Buffer(blocks['0000000000000afa0c3c0afd450c793a1e300ec84cbe9555166e06132f19a8f7'], 'hex'));
+    var bchBlock = bchLib.Block.fromBuffer(new Buffer(blocks['0000000000000afa0c3c0afd450c793a1e300ec84cbe9555166e06132f19a8f7'], 'hex'));
 
     var node = {
       log: sinon.stub(),
-      getBlock: sinon.stub().callsArgWith(1, null, bcccoreBlock),
+      getBlock: sinon.stub().callsArgWith(1, null, bchBlock),
       services: {
         bitcoind: {
           getBlockHeader: sinon.stub().callsArgWith(1, null, blockIndexes['0000000000000afa0c3c0afd450c793a1e300ec84cbe9555166e06132f19a8f7']),
@@ -102,7 +102,7 @@ describe('Blocks', function() {
     });
 
     it('block pool info should be correct', function(done) {
-      var block = bcccore.Block.fromString(blocks['000000000000000004a118407a4e3556ae2d5e882017e7ce526659d8073f13a4']);
+      var block = bchLib.Block.fromString(blocks['000000000000000004a118407a4e3556ae2d5e882017e7ce526659d8073f13a4']);
       var node = {
         log: sinon.stub(),
         getBlock: sinon.stub().callsArgWith(1, null, block),
