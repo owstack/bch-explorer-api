@@ -36,10 +36,10 @@
     "request": "^2.64.0"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
-    "mocha": "^2.4.5",
+    "chai": "^4.1.2",
+    "mocha": "^4.0.0",
     "proxyquire": "^1.7.2",
-    "should": "^8.3.1",
-    "sinon": "^1.10.3"
+    "should": "^13.1.0",
+    "sinon": "^4.0.0"
   }
 }
