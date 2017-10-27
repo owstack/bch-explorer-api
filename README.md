@@ -9,10 +9,6 @@ A Bitcoin Cash blockchain REST and web socket API service for [Bch Node](https:/
 
 This is a backend-only service. If you're looking for the web frontend application, take a look at https://github.com/owstack/ows-explorer.
 
-## Attribution
-
-This repository was created by copy forking [explorer-api commit 8f4029b](https://github.com/bitpay/explorer-api/commit/8f4029b3e5e3b490dc9283febafa9a9ff084dbef).
-
 ## Getting Started
 
 ```bashl
