@@ -1,6 +1,6 @@
 'use strict';
 
-var bchLib = require('bch-lib');
+var bchLib = require('@owstack/bch-lib');
 var AddressController = require('../lib/addresses');
 var bodyParser = require('body-parser');
 var BaseService = require('./service');

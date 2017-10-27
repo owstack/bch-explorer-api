@@ -3,7 +3,7 @@
 var sinon = require('sinon');
 var should = require('should');
 
-var bchLib = require('bch-lib');
+var bchLib = require('@owstack/bch-lib');
 var AddressController = require('../lib/addresses');
 var _ = bchLib.deps._;
 
