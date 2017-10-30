@@ -1,7 +1,7 @@
 {
   "name": "@owstack/bch-explorer-api",
   "description": "A Bitcoin Cash blockchain REST and web socket API service for Bch Node.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "repository": "git://github.com/owstack/bch-explorer-api.git",
   "bugs": {
     "url": "https://github.com/owstack/bch-explorer-api/issues"
@@ -26,9 +26,9 @@
   "main": "bch-node",
   "bchNode": "bch-node",
   "dependencies": {
+    "@owstack/bch-lib": "^0.0.3",
+    "@owstack/bch-message": "^0.0.3",
     "async": "^2.5.0",
-    "@owstack/bch-lib": "^0.0.2",
-    "@owstack/bch-message": "^0.0.2",
     "body-parser": "^1.13.3",
     "compression": "^1.6.1",
     "lru-cache": "^4.0.1",
