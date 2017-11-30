@@ -31,8 +31,8 @@ describe('Currency', function() {
     var res = {
       jsonp: function(response) {
         response.status.should.equal(200);
-        should.exist(response.data.rates.USD.rate);
-        (typeof response.data.rates.USD.rate).should.equal('number');
+        should.exist(response.data.rates.USD[0].rate);
+        (typeof response.data.rates.USD[0].rate).should.equal('number');
         done();
       }
     };
@@ -40,8 +40,13 @@ describe('Currency', function() {
   });
 
   it('will retrieve a fresh value', function(done) {
+    var requestStub = sinon.stub();
+    requestStub.onCall(0).callsArgWith(1, null, {statusCode: 200}, JSON.stringify(krakenData));
+    requestStub.onCall(1).callsArgWith(1, null, {statusCode: 200}, JSON.stringify(krakenData));
+    requestStub.returns(2);
+
     var TestCurrencyController = proxyquire('../lib/currency', {
-      request: sinon.stub().callsArgWith(1, null, {statusCode: 200}, JSON.stringify(krakenData))
+      request: requestStub
     });
     var node = {
       log: {
@@ -50,17 +55,22 @@ describe('Currency', function() {
     };
     var currency = new TestCurrencyController({node: node});
     currency.rates = {
-      USD: {
-        rate: 220.20
-      }
+      USD: [{
+        name: 'Kraken',
+        rate: 190.10
+      }],
+      EUR: [{
+        name: 'Kraken',
+        rate: 190.10
+      }]
     };
     currency.timestamp = Date.now() - 61000 * CurrencyController.DEFAULT_CURRENCY_DELAY;
     var req = {};
     var res = {
       jsonp: function(response) {
         response.status.should.equal(200);
-        should.exist(response.data.rates.USD.rate);
-        response.data.rates.USD.rate.should.equal(448.60);
+        should.exist(response.data.rates.USD[0].rate);
+        response.data.rates.USD[0].rate.should.equal(448.60);
         done();
       }
     };
@@ -78,17 +88,22 @@ describe('Currency', function() {
     };
     var currency = new TestCurrencyController({node: node});
     currency.rates = {
-      USD: {
+      USD: [{
+        name: 'Kraken',
         rate: 448.60
-      }
+      }],
+      EUR: [{
+        name: 'Kraken',
+        rate: 190.10
+      }]
     };
     currency.timestamp = Date.now() - 65000 * CurrencyController.DEFAULT_CURRENCY_DELAY;
     var req = {};
     var res = {
       jsonp: function(response) {
         response.status.should.equal(200);
-        should.exist(response.data.rates.USD.rate);
-        response.data.rates.USD.rate.should.equal(448.60);
+        should.exist(response.data.rates.USD[0].rate);
+        response.data.rates.USD[0].rate.should.equal(448.60);
         node.log.error.called;
         done();
       }
@@ -108,17 +123,22 @@ describe('Currency', function() {
     };
     var currency = new TestCurrencyController({node: node});
     currency.rates = {
-      USD: {
+      USD: [{
+        name: 'Kraken',
         rate: 448.60
-      }
+      }],
+      EUR: [{
+        name: 'Kraken',
+        rate: 190.10
+      }]
     };
     currency.timestamp = Date.now();
     var req = {};
     var res = {
       jsonp: function(response) {
         response.status.should.equal(200);
-        should.exist(response.data.rates.USD.rate);
-        response.data.rates.USD.rate.should.equal(448.60);
+        should.exist(response.data.rates.USD[0].rate);
+        response.data.rates.USD[0].rate.should.equal(448.60);
         request.callCount.should.equal(0);
         done();
       }
