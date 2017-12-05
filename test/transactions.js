@@ -977,10 +977,10 @@ describe('Transactions', function() {
         'valueOut': 0.02038504,
         'vout': [
           {
-            'HJEef8hBhsrZ7CQxzeihsCX6m2JZh5rdiH': 45000
+            '3DQYCLG6rZdtV2Xw8y4YtozZjNHYoKsLuo': 45000
           },
           {
-            'CHyp8pDwqW6cZFv3trGYM2cpaizfdRmD9g': 1993504
+            '12WvZmssxT85f81dD6wcmWznxbnFkEpNMS': 1993504
           }
         ],
         'isRBF': false
